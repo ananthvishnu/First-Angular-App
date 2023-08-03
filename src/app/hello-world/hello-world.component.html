@@ -1,3 +1,51 @@
-<h1>{{firstName}}</h1>
+<!-- <h1>{{firstName}}</h1>
 <br>
 <input type="text" [(ngModel)]="firstName">
+
+
+<h3 style.color = "{{color}}">This is Red</h3>
+
+<p>You Have been clicked : {{clickCount}}</p>
+<p>Copy of click count : {{clickCount2}}</p>
+
+<button (click) = "clickMe(); clickCount2=clickCount">Click Me</button> -->
+
+
+<!-- <input type="text" (input)="handleInput($event); value1=$any($event.target).value">
+<p>With handle input: {{value}}</p>
+<p>Without handle  input: {{value1}}</p> -->
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{title}}
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="table-primary">
+          <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Users</th>
+            <th>age</th>
+            <th>occupation</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr [ngClass]="{'table-danger': o ,'table-warning': e, 'table-success':f,'table-info':l }"
+            *ngFor="let user of users; let i = index; let o = odd; let e = even; let f = first; let l = last">
+            <td>{{i + 1}}</td>
+            <td>{{title}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.occupation}}</td>
+            <td>{{user.location}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary">Click me!</button>
