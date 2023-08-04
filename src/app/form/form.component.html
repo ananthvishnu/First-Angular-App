@@ -1,0 +1,13 @@
+<!--?  @Input & @Output Attribute Directive Examples -->
+<h4>form component!</h4>
+<!--! parent to child method -->
+<!-- Parent -->
+<form action="">
+    <label for="">Car Name</label>
+    <input type="text" name="carname" [(ngModel)]="carName">
+    <button (click)="addCar()">Submit</button>
+</form>
+
+<br><br>
+<!-- Child -->
+<!-- <app-list [carsInput]="cars"></app-list> -->

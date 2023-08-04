@@ -1,2 +1,21 @@
-<h1>app components works</h1>
-<app-hello-world></app-hello-world>
+<!-- <h1>app components works</h1>
+<app-hello-world></app-hello-world> -->
+
+<!--?Parent app-form component -->
+<!-- <app-form></app-form> -->
+
+<!--? This time list component are parent element -->
+<!-- <app-list></app-list> -->
+
+
+<!--? Lifecycle Hooks example -->
+<h3>App Component</h3>
+Title : <input type="text" [(ngModel)]="title">
+<button (click)="addTitle()">Submit</button>
+<br>
+Disable Heading: <input type="checkbox" [(ngModel)]="disbleHeading">
+<br>
+<br>
+<!--? ngDoCheck hook ikkaka change panninathu... -->
+<!-- <app-heading [text] = 'title'></app-heading> -->
+<app-heading [text] = 'titles' *ngIf="!disbleHeading"></app-heading>

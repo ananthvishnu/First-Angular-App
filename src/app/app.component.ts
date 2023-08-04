@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'vishnu';
+
+  titles:string[] = []
+
+  addTitle(){
+    this.titles.push(this.title)
+    console.log(this.titles);
+    
+  }
+
+  disbleHeading = false;
 }
