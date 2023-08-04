@@ -16,7 +16,8 @@
 <p>Without handle  input: {{value1}}</p> -->
 
 
-<div class="panel panel-primary">
+<!-- This is for ngFor directive example -->
+<!-- <div class="panel panel-primary">
   <div class="panel-heading">
     {{title}}
   </div>
@@ -48,4 +49,83 @@
     </div>
   </div>
 </div>
-<button class="btn btn-primary">Click me!</button>
+<button class="btn btn-primary">Click me!</button> -->
+
+<!-- ngSwitchCase -->
+<!-- <label for="">Type Num</label>
+<input type="text" [(ngModel)]="num">
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="1"> One </div>
+    <div *ngSwitchCase="2"> Two </div>
+    <div *ngSwitchCase="3"> Three </div>
+    <div *ngSwitchCase="4"> Four </div>
+    <div *ngSwitchCase="5"> Five </div>
+    <div *ngSwitchCase="6"> Six </div>
+    <div *ngSwitchCase="7"> Seven </div>
+</div> -->
+
+<!-- <h1>ngIf Example</h1>
+<p *ngIf="true">Can you see me</p>
+
+<div>
+    <label for="">Check Box</label>
+    <input type="checkbox" [(ngModel)]="showMe">
+</div> -->
+<!-- <p *ngIf="showMe; else elseBlock">Showme is checked</p> -->
+<!-- <p *ngIf="!showMe">showme is unchecked</p> -->
+
+
+
+<!-- <p *ngIf="showMe; else elseBlock">Showme is checked</p>
+<ng-template #elseBlock>
+    <p>showme is unchecked</p>
+</ng-template>
+
+
+<div *ngIf="showMe; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+<p>Showme is checked</p>
+</ng-template>
+
+<ng-template #elseBlock>
+    <p>showme is unchecked</p>
+</ng-template> -->
+
+<!-- Red<input type="checkbox" [(ngModel)]="enableRed">
+Big<input type="checkbox" [(ngModel)]="enableBig">
+Italic<input type="checkbox" [(ngModel)]="enableItalic">
+
+
+<div [ngClass]="{'primary':enableRed, 'big':enableBig,'italics':enableItalic}">
+Vishnu
+</div> -->
+
+
+<!-- <h2 [ngStyle]="{'color':status == 'error' ? 'red' : 'blue'}">Vishnu</h2> -->
+
+<!--*************************************************PIPES STARTED********************************************-->
+<!--! Pipes -->
+<!--? Datepipe - Change the Date value-->
+<!-- <p>Unformatted date:{{toDate}}</p>
+<p>formatted date:{{toDate | date}} </p>
+<p>medium date:{{toDate | date:'medium'}} </p>
+<p>short date:{{toDate | date:'short'}} </p>
+<p>full date:{{toDate | date:'fullDate'}} </p>
+<p>long date:{{toDate | date:'longDate'}} </p> -->
+
+<!--? UPPERCASE,lowercase pipes -->
+<!-- <p>UPPERCASE : {{message | uppercase}} </p>
+<p>lowercase : {{message | lowercase}} </p> -->
+
+<!--? Slice pipe -->
+<!-- <p>Original: {{message}}</p>
+<p>Sliced: {{message | slice:7:14}}</p>
+<p>Sliced: {{message | slice:-7}}</p>
+<p>Sliced: {{message | slice:0:7}}</p> -->
+
+<!--? Currency pipe -->
+<!-- <p>Price : {{Currency}}</p>
+<p>Price : {{Currency | currency}}</p>
+<p>Price : {{Currency | currency:'INR'}}</p>
+<p>Price : {{Currency | currency:'LKR'}}</p>
+<p>Price: {{Currency | currency:'INR':false}}</p> -->
