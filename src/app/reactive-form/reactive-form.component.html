@@ -1,19 +1,43 @@
 <div class="container mt-5">
     <form [formGroup]="contactForm" (submit)="onSubmit()">
-      <h3 class="mb-4 text-center" >Reactive Form</h3>
+      <h3 class="mb-4 text-center three-d-effect">Reactive Form</h3>
       <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" name="firstname" formControlName="firstName">
+        <span *ngIf="!firstname?.valid && (firstname?.touched || firstname?.dirty)" class="text-warning">
+         <span class="text-warning text-center" *ngIf="firstname?.errors?.['required']">
+            FirstName is Required !
+         </span>
+         <span class="text-warning text-center" *ngIf="firstname?.errors?.['minlength']">
+          Minimum length is 10 Characters !
+       </span>
+        </span>
       </div>
   
       <div class="mb-3">
         <label for="lastname" class="form-label">Last Name</label>
         <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" name="lastname" formControlName="lastName">
+        <span *ngIf="!lastname?.valid && (lastname?.touched || lastname?.dirty)" class="text-warning">
+          <span class="text-warning text-center" *ngIf="lastname?.errors?.['required']">
+             LastName is Required !
+          </span>
+          <span class="text-warning text-center" *ngIf="lastname?.errors?.['minlength']">
+           Minimum length is 10 Characters !
+          </span>
+          <span class="text-warning text-center" *ngIf="lastname?.errors?.['pattern']">
+            Only Letters Allowed !
+           </span>
+         </span>
       </div>
   
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Enter your email address" name="email" formControlName="email">
+        <span *ngIf="!email?.valid && (email?.touched || email?.dirty)" class="text-warning">
+          <span class="text-warning text-center" *ngIf="email?.errors?.['required']">
+             Email is Required !
+          </span>
+         </span>
       </div>
   
       <div class="mb-3">
@@ -26,11 +50,21 @@
           <input type="radio" class="form-check-input" id="female" value="female" name="gender" formControlName="gender">
           <label class="form-check-label" for="female">Female</label>
         </div>
+        <span *ngIf="!gender?.valid && (gender?.touched || gender?.dirty)" class="text-warning">
+          <span class="text-warning text-center" *ngIf="gender?.errors?.['required']">
+             Gender is Required !
+          </span>
+         </span>
       </div>
   
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="isMarried" name="isMarried" formControlName="isMarried">
         <label class="form-check-label" for="isMarried">Married</label>
+        <span *ngIf="!ismarried?.valid && (ismarried?.touched || ismarried?.dirty)" class="text-warning">
+          <span class="text-warning text-center" *ngIf="ismarried?.errors?.['required']">
+             Married Status is Required !
+          </span>
+         </span>
       </div>
   
       <div class="mb-3">
@@ -43,25 +77,45 @@
           <option value="1">USA</option>
           <option value="1">Japan</option>
         </select>
+        <span *ngIf="!country?.valid && (country?.touched || country?.dirty)" class="text-warning">
+          <span class="text-warning text-center" *ngIf="country?.errors?.['required']">
+             Country is Required !
+          </span>
+         </span>
       </div>
 
       <div formGroupName="address">
         <div class="mb-3">
             <label for="city" class="form-label">City</label>
             <input type="text" class="form-control" id="city" placeholder="Enter your City Name" name="city" formControlName="city">
+            <span *ngIf="!city?.valid && (city?.touched || city?.dirty)" class="text-warning">
+              <span class="text-warning text-center" *ngIf="city?.errors?.['required']">
+                 City is Required !
+              </span>
+             </span>
           </div>
       
           <div class="mb-3">
             <label for="street" class="form-label">Street</label>
             <input type="text" class="form-control" id="street" placeholder="Enter your Street" name="street" formControlName="street">
+            <span *ngIf="!street?.valid && (street?.touched || street?.dirty)" class="text-warning">
+              <span class="text-warning text-center" *ngIf="street?.errors?.['required']">
+                 Street is Required !
+              </span>
+             </span>
           </div>
       
           <div class="mb-3">
             <label for="pincode" class="form-label">Pin Code</label>
             <input type="pincode" class="form-control" id="pincode" placeholder="Enter your Pin Code" name="pincode" formControlName="pincode">
+            <span *ngIf="!pincode?.valid && (pincode?.touched || pincode?.dirty)" class="text-warning">
+              <span class="text-warning text-center" *ngIf="pincode?.errors?.['required']">
+                 PinCode is Required !
+              </span>
+             </span>
           </div>
       </div>
-      <button type="submit" class="btn btn-danger">Submit</button>
+      <button type="submit" class="btn btn-danger" [disabled]="!contactForm.valid">Submit</button>
     </form>
   </div>
   

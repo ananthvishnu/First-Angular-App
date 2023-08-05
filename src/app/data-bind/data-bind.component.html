@@ -1,0 +1,38 @@
+<!-- <h1>{{firstName}}{{lastName}}</h1> -->
+<!--? view la irunthu entha datavum component ikku poi serala... -->
+
+
+<!--? PROPERTY-BINDING -->
+<!-- <h1 [innerText]="title"></h1> -->
+<!--? view la irunthu entha datavum component ikku poi serala... -->
+
+
+<!--? TWO-WAY-BINDING -->
+<!-- <div class="container mt-5">
+    <h3 class="mb-4 text-center">TWO-WAY-BINDING</h3>
+    <h5>{{name}}</h5>
+    <div class="mb-3">
+      <label for="firstname" class="form-label">First Name</label>
+      <input type="text" class="form-control" [(ngModel)]="name">
+    </div>
+</div> -->
+
+
+<!--? STRING INTERPOLATION -->
+<!-- <div class="container mt-5">
+    <h1 class="mb-4 text-center">STRING-INTERPOLATION</h1>
+    <h1>{{getTitle() + '' + 'AGE OF' + '' +'EXTENCTION'}}</h1>
+    <h1>{{'OPTIMUS PRIME'}}</h1>
+    <h1>100 x 80 = {{100 * 80}}</h1>
+    <h1>LARGEST NUMBER : {{getMax(100, 200)}}</h1> -->
+    <!--? property ikku value ah kudukkurathu... -->
+    <!-- <h1 style.color = '{{color}}'>VISHNU</h1> 
+</div> -->
+
+<div class="container mt-5">
+<h1 class="mb-4 text-center" text-center>PROPERTY-BINDING</h1>
+<h1 class="mb-4" text-center [innerText]="title"></h1>
+<button class="btn btn-warning" [disabled]="isDisabled">Click Me!</button><br><br>
+<button class="btn btn-warning" [attr.disabled]="isDisabled">Click Me!</button>
+<h6 [innerText]="'Welcome' + 'MyWorld'"></h6>
+</div>

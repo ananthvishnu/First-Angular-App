@@ -23,9 +23,9 @@ this.contact = {
   lastName:'',
   email:'',
   gender:'',
-  isMarried:true,
+  isMarried:false,
   country:'',
-  address: {city:'jaffna',street:'pointpedro',pincode:'40000'}
+  address: {city:'',street:'',pincode:''}
   }
 }
 

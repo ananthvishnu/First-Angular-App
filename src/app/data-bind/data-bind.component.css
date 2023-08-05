@@ -1,0 +1,25 @@
+@import url('https://fonts.cdnfonts.com/css/transformers-2');
+
+
+
+.container {
+    background-image: url("https://wallpaperaccess.com/full/834834.jpg");
+    background-size: cover;
+    /* Set background image to cover the container */
+    background-repeat: no-repeat;
+    /* Prevent background image from repeating */
+    background-position: center center;
+    /* Center the background image */
+    color: white;
+    border-radius: 10px;
+    font-family: 'Transformers', sans-serif;
+    letter-spacing: 3px;
+    /* Adjust this value as needed for the desired font gap */
+    border: 5px solid red;
+    box-shadow: 10px 10px 5px black;
+    padding: 15px;
+    height: auto;
+    width: auto;
+
+
+}
