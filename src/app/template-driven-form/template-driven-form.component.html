@@ -1,0 +1,119 @@
+<div class="container mt-5">
+    <form #contactForm = 'ngForm' (submit)="onSubmit(contactForm)">
+      <h3 class="mb-4 text-center" >Template Driven Form</h3>
+      <div class="mb-3">
+        <label for="firstname" class="form-label ">First Name</label>
+        <input type="text" class="form-control" id="firstname" #firstname="ngModel" placeholder="Enter your first name" name="firstname" [(ngModel)]="contact.firstName" required minlength="10">
+        <span  *ngIf="!firstname.valid && (firstname.touched || firstname.dirty)" >
+          <span *ngIf="firstname.errors ?.['minlength']" class="text-warning">
+           Minimum Length is 10 Charactors !
+          </span>
+          <span *ngIf="firstname.errors ?.['required']" class="text-warning">
+            First Name is Required !
+          </span>
+        </span>
+      </div>
+  
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" #lastname="ngModel" id="lastname" placeholder="Enter your last name" name="lastname" [(ngModel)]="contact.lastName" required minlength="5" pattern="^[a-zA-Z]+$">
+     <span *ngIf="!lastname.valid && (lastname.touched || lastname.dirty)" class="text-warning">
+        <span  *ngIf="lastname.errors ?.['minlength']" class="text-warning">
+          Minimum Length is 5 Charactors !
+        </span>
+        <span  *ngIf="lastname.errors ?.['pattern']" class="text-warning">
+          Only letters have Allowed !
+        </span>
+        <span *ngIf="lastname.errors ?.['required']" class="text-warning">
+          Last Name is Required !
+        </span>
+     </span>
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" #email="ngModel" class="form-control" id="email" placeholder="Enter your email address" name="email" [(ngModel)]="contact.email" required>
+        <span *ngIf="!email.valid && (email.touched || email.dirty)" class="text-warning">
+          <span *ngIf="email.errors ?.['required']" class="text-warning">
+            Email is Required !
+          </span>
+       </span>
+
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-check-label">Gender</label>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" #gander="ngModel" id="male" value="male" name="gender" [(ngModel)]="contact.gender" required>
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" #gender="ngModel" id="female" value="female" name="gender" [(ngModel)]="contact.gender" required>
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+        <span *ngIf="!gender.valid && (gender.touched || gender.dirty)" class="text-warning">
+          <span *ngIf="gender.errors ?.['required']" class="text-warning">
+            Gender is Required !
+          </span>
+       </span>
+      </div>
+  
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" #isMarried="ngModel" id="isMarried" name="isMarried" [(ngModel)]="contact.isMarried" required>
+        <label class="form-check-label" for="isMarried">Married</label>
+        <span *ngIf="!isMarried.valid && (isMarried.touched || isMarried.dirty)" class="text-warning">
+          <span *ngIf="isMarried.errors ?.['required']" class="text-warning">
+            Status is Required !
+          </span>
+       </span>
+      </div>
+  
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <select class="form-select" #country="ngModel" id="country" name="country" [(ngModel)]="contact.country" required>
+          <option value="">Select</option>
+          <option [ngValue]="country.id" *ngFor="let country of countryList">{{ country.name }}</option>
+        </select>
+        <span *ngIf="!country.valid && (country.touched || country.dirty)" class="text-warning">
+          <span *ngIf="country.errors ?.['required']" class="text-warning">
+            Country is Required !
+          </span>
+       </span>
+      </div>
+
+      <div ngModelGroup="address">
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" #city="ngModel" class="form-control" id="city" placeholder="Enter your City Name" name="city" [(ngModel)]="contact.address.city" required>
+            <span *ngIf="!city.valid && (city.touched || city.dirty)" class="text-warning">
+              <span *ngIf="city.errors ?.['required']" class="text-warning">
+                City is Required !
+              </span>
+           </span>
+          </div>
+      
+          <div class="mb-3">
+            <label for="street" class="form-label">Street</label>
+            <input type="text" #street="ngModel" class="form-control" id="street" placeholder="Enter your Street" name="street" [(ngModel)]="contact.address.street" required>
+            <span *ngIf="!street.valid && (street.touched || street.dirty)" class="text-warning">
+              <span *ngIf="street.errors ?.['required']" class="text-warning">
+                Street is Required !
+              </span>
+           </span>
+          </div>
+      
+          <div class="mb-3">
+            <label for="pincode" class="form-label">Pin Code</label>
+            <input type="pincode" #pincode="ngModel" class="form-control" id="pincode" placeholder="Enter your Pin Code" name="pincode" [(ngModel)]="contact.address.pincode" required>
+            <span *ngIf="!pincode.valid && (pincode.touched || pincode.dirty)" class="text-warning">
+              <span *ngIf="pincode.errors ?.['required']" class="text-warning">
+                Pin Code is Required !
+              </span>
+           </span>
+          </div>
+      </div>
+  
+      <button type="submit" class="btn btn-danger" [disabled]="!contactForm.valid">Submit</button>
+    </form>
+  </div>
+  

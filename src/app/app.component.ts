@@ -6,15 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'vishnu';
+  // title = 'vishnu';
 
-  titles:string[] = []
+  // titles:string[] = []
 
-  addTitle(){
-    this.titles.push(this.title)
-    console.log(this.titles);
+  // addTitle(){
+  //   this.titles.push(this.title)
+  //   console.log(this.titles);
     
-  }
+  // }
 
-  disbleHeading = false;
+  // disbleHeading = false;
+
+
+
+
+
 }

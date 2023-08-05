@@ -1,0 +1,67 @@
+<div class="container mt-5">
+    <form [formGroup]="contactForm" (submit)="onSubmit()">
+      <h3 class="mb-4 text-center" >Reactive Form</h3>
+      <div class="mb-3">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" name="firstname" formControlName="firstName">
+      </div>
+  
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" name="lastname" formControlName="lastName">
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email address" name="email" formControlName="email">
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-check-label">Gender</label>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="male" value="male" name="gender" formControlName="gender">
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="female" value="female" name="gender" formControlName="gender">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+      </div>
+  
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="isMarried" name="isMarried" formControlName="isMarried">
+        <label class="form-check-label" for="isMarried">Married</label>
+      </div>
+  
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <select class="form-select" id="country" name="country" formControlName="country">
+          <option value="">Select</option>
+          <option value="1">Srilanka</option>
+          <option value="1">India</option>
+          <option value="1">China</option>
+          <option value="1">USA</option>
+          <option value="1">Japan</option>
+        </select>
+      </div>
+
+      <div formGroupName="address">
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" placeholder="Enter your City Name" name="city" formControlName="city">
+          </div>
+      
+          <div class="mb-3">
+            <label for="street" class="form-label">Street</label>
+            <input type="text" class="form-control" id="street" placeholder="Enter your Street" name="street" formControlName="street">
+          </div>
+      
+          <div class="mb-3">
+            <label for="pincode" class="form-label">Pin Code</label>
+            <input type="pincode" class="form-control" id="pincode" placeholder="Enter your Pin Code" name="pincode" formControlName="pincode">
+          </div>
+      </div>
+      <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
+  </div>
+  

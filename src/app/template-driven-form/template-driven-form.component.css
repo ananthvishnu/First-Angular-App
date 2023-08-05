@@ -1,0 +1,72 @@
+/* form.component.css */
+ @import url('https://fonts.cdnfonts.com/css/transformers-2');
+     
+.container {
+    background-image: url("https://wallpaperaccess.com/full/834834.jpg");
+    background-size: cover; /* Set background image to cover the container */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-position: center center; /* Center the background image */
+    color: white;
+    border-radius: 10px;
+    font-family: 'Transformers', sans-serif;
+    letter-spacing: 3px; /* Adjust this value as needed for the desired font gap */
+    border: 5px solid red;
+    box-shadow: 10px 10px 5px black;
+    padding: 15px;
+    height: auto;
+    width: 700px;
+
+                                                
+  }
+  
+  .form-label {
+    color: white;
+  }
+  
+  .form-control {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+  }
+  
+  .form-check-label {
+    color: white;
+  }
+  
+  .form-select {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+  }
+  .form-control::placeholder {
+    color: white; /* Replace with your desired color value */
+  }
+
+  .btn-danger {
+    background-color: #dc3545; /* Button background color */
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: transform 0.2s ease; /* Add a transition for smooth animation */
+  }
+  
+  /* Add a scale effect when the button is hovered */
+  .btn-danger:hover {
+    transform: scale(1.05); /* Scale up the button by 5% */
+  }
+
+  
+  /* Target the option elements within the select */
+  .form-select option {
+    color: black; /* Change the font color of the options */
+  }
+
+  /* form.component.css */
+
+/* Change the color of checked radio buttons and checkboxes to red */
+.form-check-input:checked {
+    border-color: red;
+    background-color: red;
+  }
+  
