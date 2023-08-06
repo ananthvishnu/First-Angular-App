@@ -1,0 +1,30 @@
+.td{
+    font-size: 20px;
+    font-weight: 900;
+}
+.container{
+padding: 20px;
+}
+
+.black-form {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+  }
+  
+  .white-text {
+    color: white;
+  }
+  
+  .white-input {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+  }
+  
+  .white-input:focus,
+  .white-input:hover {
+    border-color: white;
+  }
+  

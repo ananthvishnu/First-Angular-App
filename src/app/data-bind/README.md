@@ -17,5 +17,9 @@ HTML Element ondukku attribute valiya value kudukkitathu than property binding..
 <h1 [innerText]="title"></h1>
 <button [isDisabled]>Click Me!</button>
 
+# EVENT-BINDING
+
+
+
 # STRING INTERPOLATION
 component la irukkira variable value vai view ikku kondu varathukku use pannuvam {{expression}}

@@ -1,6 +1,41 @@
-<h5>User List</h5>
-<ul>
-    <li>User name 1</li>
-    <li>User name 2</li>
-    <li>User name 3</li>
-</ul>
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Server API User List Table</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="background-color:black; color: white;">NO</th>
+          <th scope="col" style="background-color:black; color: white;">Name</th>
+          <th scope="col" style="background-color:black; color: white;">User Name</th>
+          <th scope="col" style="background-color:black; color: white;">Email</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let user of users; let i = index" >
+          <th scope="row" [ngStyle]="{'background-color': getRainbowColor(i)}">{{user.id}}</th>
+          <td [ngStyle]="{'background-color': getRainbowColor(i)}" class="td">{{user.name}}</td>
+          <td [ngStyle]="{'background-color': getRainbowColor(i)}" class="td">{{user.username}}</td>
+          <td [ngStyle]="{'background-color': getRainbowColor(i)}" class="td">{{user.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+  <div class="container mt-5">
+    <form [formGroup]="userForm" action="" method="post" (submit)="onSubmit()" class="black-form">
+      <div class="mb-3">
+        <h3 class="mb-4 text-center white-text">POST METHOD</h3>
+        <label for="name" class="form-label white-text">Name</label>
+        <input type="text" class="form-control white-input" id="name" placeholder="Enter your first Name" name="name" formControlName="name">
+  
+        <label for="username" class="form-label white-text">User Name</label>
+        <input type="text" class="form-control white-input" id="username" placeholder="Enter your User Name" name="username" formControlName="username">
+  
+        <label for="email" class="form-label white-text">Email</label>
+        <input type="text" class="form-control white-input" id="email" placeholder="Enter your Email" name="email" formControlName="email">
+        <br>
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </div>
+    </form>
+  </div>
+  
