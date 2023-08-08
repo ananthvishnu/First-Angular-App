@@ -1,3 +1,50 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#"><img src="../favicon.ico" alt="" style="height: 30px; width: 30px;"></a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      mdbCollapse
+      #basicNavbar=""
+    >
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#"
+            >Reactive Form</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Template Driven Form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Post & Get Data from json server</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+      <!-- Search form -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
 <!-- <h1>app components works</h1>
 <app-hello-world></app-hello-world> -->
 
@@ -6,7 +53,6 @@
 
 <!--? This time list component are parent element -->
 <!-- <app-list></app-list> -->
-
 
 <!--? Lifecycle Hooks example -->
 <!-- <h3>App Component</h3>
@@ -20,13 +66,16 @@ Disable Heading: <input type="checkbox" [(ngModel)]="disbleHeading">
 <!-- <app-heading [text] = 'title'></app-heading> -->
 <!-- <app-heading [text] = 'titles' *ngIf="!disbleHeading"></app-heading> -->
 
-
 <!-- <br>
 <br> -->
- <!--? app-template-driven-form selector added -->
+<!--? app-template-driven-form selector added -->
 <!-- <app-template-driven-form></app-template-driven-form> -->
 <!-- <br>
 <br> -->
 
-<app-user-list></app-user-list>
+<!-- <app-user-list></app-user-list> -->
+<app-reactive-form></app-reactive-form>
 
+<app-template-driven-form></app-template-driven-form>
+
+<app-user-list></app-user-list>

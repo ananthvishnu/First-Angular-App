@@ -76,6 +76,59 @@ export class UserListComponent implements OnInit {
 
   
 
+
+// ... (existing code) ...
+
+editedUser: User | null = null;
+
+// Function to populate the form with user details for editing
+editUser(user: User) {
+  this.editedUser = user;
+  this.userForm.patchValue(user);
+}
+
+// Function to cancel editing
+cancelEdit() {
+  this.editedUser = null;
+  this.userForm.reset();
+}
+
+updateUser() {
+  if (this.editedUser) {
+    const updatedUser: User = {
+      ...this.editedUser,
+      name: this.userForm.controls.name.value as string,
+      username: this.userForm.controls.username.value as string,
+      email: this.userForm.controls.email.value as string
+    };
+
+    this.http
+      .put<User>(`https://jsonplaceholder.typicode.com/users/${updatedUser.id}`, updatedUser)
+      .subscribe(() => {
+        const index = this.users.findIndex(user => user.id === updatedUser.id);
+        if (index !== -1) {
+          this.users[index] = updatedUser;
+        }
+        this.cancelEdit();
+      });
+  }
+}
+
+
+// Function to delete a user
+deleteUser(user: User) {
+  this.http
+    .delete(`https://jsonplaceholder.typicode.com/users/${user.id}`)
+    .subscribe(() => {
+      this.users = this.users.filter(u => u.id !== user.id);
+    });
+}
+
+// ... (rest of the component code) ...
+
+
+  
+
 }
 
 //? USERS I GET PANRATHUKKANA CLASS ***************************//

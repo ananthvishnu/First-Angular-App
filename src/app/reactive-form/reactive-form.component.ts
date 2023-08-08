@@ -8,11 +8,11 @@ import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 })
 export class ReactiveFormComponent {
 contactForm = new FormGroup({
-  firstName: new FormControl('',[Validators.required, Validators.minLength(10)]),
+  firstName: new FormControl('',[Validators.required, Validators.maxLength(10)]),
   lastName:new FormControl({
     value:'',
     disabled:false
-  },[Validators.required,Validators.minLength(15),Validators.pattern("^[a-zA-Z]+$")]),
+  },[Validators.required,Validators.maxLength(15),Validators.pattern("^[a-zA-Z]+$")]),
   email:new FormControl('',[Validators.required]),
   gender:new FormControl('',[Validators.required]),
   isMarried:new FormControl('',[Validators.requiredTrue]),

@@ -15,6 +15,10 @@
           <td [ngStyle]="{'background-color': getRainbowColor(i)}" class="td">{{user.name}}</td>
           <td [ngStyle]="{'background-color': getRainbowColor(i)}" class="td">{{user.username}}</td>
           <td [ngStyle]="{'background-color': getRainbowColor(i)}" class="td">{{user.email}}</td>
+          <td>
+            <button class="btn btn-info" (click)="editUser(user)">Edit</button>
+    <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -25,6 +29,7 @@
     <form [formGroup]="userForm" action="" method="post" (submit)="onSubmit()" class="black-form">
       <div class="mb-3">
         <h3 class="mb-4 text-center white-text">POST METHOD</h3>
+        <h3 class="mb-4 text-center white-text">{{ editedUser ? 'EDIT USER' : 'ADD USER' }}</h3>
         <label for="name" class="form-label white-text">Name</label>
         <input type="text" class="form-control white-input" id="name" placeholder="Enter your first Name" name="name" formControlName="name">
   

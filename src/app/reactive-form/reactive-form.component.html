@@ -8,8 +8,8 @@
          <span class="text-warning text-center" *ngIf="firstname?.errors?.['required']">
             FirstName is Required !
          </span>
-         <span class="text-warning text-center" *ngIf="firstname?.errors?.['minlength']">
-          Minimum length is 10 Characters !
+         <span class="text-warning text-center" *ngIf="firstname?.errors?.['maxlength']">
+          Maximum length is 10 Characters !
        </span>
         </span>
       </div>
@@ -21,8 +21,8 @@
           <span class="text-warning text-center" *ngIf="lastname?.errors?.['required']">
              LastName is Required !
           </span>
-          <span class="text-warning text-center" *ngIf="lastname?.errors?.['minlength']">
-           Minimum length is 10 Characters !
+          <span class="text-warning text-center" *ngIf="lastname?.errors?.['maxlength']">
+           Maximum length is 15 Characters !
           </span>
           <span class="text-warning text-center" *ngIf="lastname?.errors?.['pattern']">
             Only Letters Allowed !
